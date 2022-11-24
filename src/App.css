@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
+.messaging-app {
+  max-width: 350px;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[class*="_isolated"] .messaging-app {
+  margin-top: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.messaging-app [role="log"] {
+  margin: auto;
+  height: 300px;
+  overflow-y: scroll;
+  width: 300px;
+  outline: 1px solid black;
+  padding: 30px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messaging-app [role="log"] hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
