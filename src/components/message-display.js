@@ -6,14 +6,18 @@ const MessagesDisplay = React.forwardRef(({ messages }, ref) => {
     scrollToBottom();
   });
 
+  //useImperatibeHandle passes the custom functions to the parent component through the forwardRef API
   React.useImperativeHandle(ref, () => ({
     scrollToTop,
     scrollToBottom,
   }));
 
+  //Custom function
   function scrollToTop() {
     containerRef.current.scrollTop = 0;
   }
+
+  //Custom function
   function scrollToBottom() {
     containerRef.current.scrollTop = containerRef.current.scrollHeight;
   }
@@ -29,7 +33,5 @@ const MessagesDisplay = React.forwardRef(({ messages }, ref) => {
     </div>
   );
 });
-
-// eslint-disable-next-line no-func-assign
 
 export default MessagesDisplay;

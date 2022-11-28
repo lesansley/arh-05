@@ -6,10 +6,12 @@ import allMessages from "./data/messages";
 function App() {
   const messageDisplayRef = React.useRef();
   const [messages, setMessages] = React.useState(allMessages.slice(0, 8));
+
   const addMessage = () =>
     messages.length < allMessages.length
       ? setMessages(allMessages.slice(0, messages.length + 1))
       : null;
+
   const removeMessage = () =>
     messages.length > 0
       ? setMessages(allMessages.slice(0, messages.length - 1))
