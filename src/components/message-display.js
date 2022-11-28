@@ -6,7 +6,7 @@ const MessagesDisplay = React.forwardRef(({ messages }, ref) => {
     scrollToBottom();
   });
 
-  //useImperatibeHandle passes the custom functions to the parent component through the forwardRef API
+  //useImperativeHandle passes the custom functions to the parent component through the forwardRef API
   React.useImperativeHandle(ref, () => ({
     scrollToTop,
     scrollToBottom,
