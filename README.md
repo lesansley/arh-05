@@ -5,11 +5,19 @@
 
 ### useRef()
 
+The `useRef` hook lets you reference a value that’s not needed for rendering. You set an initial value that is stored as `current` property. You can change `current` property value but importantly __this does not initiate a re-render__. So you are able to update and store information based upon some event/change in the app/environment and retrieve the value later.
+
+The basic properties of `useRef` are
+
+- Stored values do not change with re-renders
+- Changing values does not force a re-render
+- The stored value is local to each copy of the component
+
 ```
 function MyInput() {
   const ref = React.useRef(null)
   
-  function handleClick() {
+  function handleClick(e) {
     ref.current.value = "Clicked"
   }
   
@@ -33,6 +41,8 @@ function App() {
 ```
 
 ### forwardRef()
+
+By default DOM Nodes are private and therefore the child DOM Node is not accessible by the parent. In order to expose the DOM Node of the child to the parent element you can use `forwardRef`. This allows the parent to pass a reference to the child, which then gives the parent access the that DOM Node.
 
 ```
 const MyInput = React.forwardRef((props, ref) => {
@@ -65,7 +75,7 @@ function App() {
 It is also possible to refactor the `forwardRef` as below.
 
 ```
-const MyInput = (props, ref) => {
+function MyInput (props, ref){
   return (
     <div>
       <input type="text" ref={ref} disabled/>
@@ -74,7 +84,7 @@ const MyInput = (props, ref) => {
   )
 }
 
-// eslint-disable-next-line no-const-assign
+// eslint-disable-next-line no-func-assign
 MyInput = React.forwardRef(MyInput)
 
 ```
