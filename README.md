@@ -12,7 +12,7 @@ The basic properties of `useRef` are
 - Stored values do not change with re-renders
 - Changing values does not force a re-render
 - The stored value is local to each copy of the component
-- `refs` should be modified in event handlers and effects. Avoid setting `ref`s during rendering.  
+- `refs` should be modified in event handlers and effects. Avoid setting `refs` during rendering.  
 
 ```
 function MyInput() {
