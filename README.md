@@ -56,7 +56,7 @@ const MyInput = React.forwardRef((props, ref) => {
 })
 
 function App() {
-  const ref = React.useRef(null)
+  const ref = React.useRef()
   
   function handleClick() {
     ref.current.value = "Clicked"
@@ -115,7 +115,7 @@ const MyInput = React.forwardRef((props, ref) => {
 })
 
 function App() {
-  const ref = React.useRef(null)
+  const ref = React.useRef()
   
   function handleClick() {
     ref.current.update("Clicked")
