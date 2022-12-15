@@ -16,7 +16,7 @@ The basic properties of `useRef` are
 
 ```
 function MyInput() {
-  const ref = React.useRef(null)
+  const ref = React.useRef()
   
   function handleClick(e) {
     ref.current.value = "Clicked"
